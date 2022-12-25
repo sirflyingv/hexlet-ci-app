@@ -1,0 +1,13 @@
+name: CI-Hexlet-Actions
+run-name: ${{github.actor}} deeper in GH Actions
+on: [push]
+jobs:
+  Setup-And-Check:
+    runs-in: ubuntu-latest
+    steps:
+      -run: echo "Becasue ${{ github.evemt_name }} happened, we are doing this"
+      - name: checkout code from repo
+        uses: actions/checkout@v3
+      - run: make setup
+      - run: make test
+      - run: make lint
