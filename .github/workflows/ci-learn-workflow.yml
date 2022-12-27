@@ -9,9 +9,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - uses: actions/setup-node@v2
-          with:
-            node-version: '16.x'
-            cache: 'npm' # ускоряет повторные сборки
+        with:
+          node-version: '16.x'
+          cache: 'npm' # ускоряет повторные сборки
       - run: make setup
       - run: make test
       - run: make lint
